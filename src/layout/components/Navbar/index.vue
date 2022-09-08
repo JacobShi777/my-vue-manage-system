@@ -3,7 +3,9 @@
       <div class="navbar_left">
         <ul>
           <li><i class="el-icon-s-unfold" @click="toggleMenu"></i></li>
-          <li>系统首页</li>
+          <li>
+            <breadcrumb></breadcrumb>
+          </li>
         </ul>
       </div>
       <div class="navbar_right">
@@ -17,11 +19,16 @@
 </template>
 
 <script>
+import Breadcrumb from './Breadcrumb'
+
 export default {
   name: 'Navbar',
   // created () {
   //   console.log(this.$route)
   // },
+  components: {
+    Breadcrumb
+  },
   methods: {
     toggleMenu () {
       console.log(this.$store.state.tabs.isCollapse)
@@ -69,5 +76,9 @@ ul{
     font-size: 25px;
     padding-right: 20px;
   }
+
+  // >>> .breadcrumb_item{
+  //       color: red;
+  //   }
 }
 </style>
