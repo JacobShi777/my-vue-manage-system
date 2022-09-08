@@ -14,7 +14,7 @@ const routes = [
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
-      meta: { title: '系统首页', icon: 'dashboard' }
+      meta: { title: '系统首页', icon: 'el-icon-s-home' }
     }]
   },
 
@@ -27,7 +27,7 @@ const routes = [
         path: 'index',
         component: () => import('@/views/basetable/index'),
         name: 'BaseTable',
-        meta: { title: '基础表格', icon: 'guide' }
+        meta: { title: '基础表格', icon: 'el-icon-notebook-2' }
       }
     ]
   },
@@ -41,7 +41,7 @@ const routes = [
         path: 'index',
         component: () => import('@/views/tabs/index'),
         name: 'Tabs',
-        meta: { title: 'tab选项卡', icon: 'guide' }
+        meta: { title: 'tab选项卡', icon: 'el-icon-document-copy' }
       }
     ]
   },
@@ -51,31 +51,31 @@ const routes = [
     component: Layout,
     redirect: '/form/baseform',
     name: 'Form',
-    meta: { title: '表单相关', icon: 'el-icon-s-help' },
+    meta: { title: '表单相关', icon: 'el-icon-date' },
     children: [
       {
         path: 'baseform',
         name: 'BaseForm',
         component: () => import('@/views/form/baseform/index'),
-        meta: { title: '基本表单', icon: 'table' }
+        meta: { title: '基本表单' }
       },
       {
         path: 'thirdmenu',
         name: 'ThirdMenu',
         component: () => import('@/views/form/thirdmenu/index'),
-        meta: { title: '三级菜单', icon: 'table' },
+        meta: { title: '三级菜单' },
         children: [
           {
             path: 'vueeditor',
             name: 'VueEditor',
             component: () => import('@/views/form/thirdmenu/vueeditor/index'),
-            meta: { title: '富文本编辑器', icon: 'table' }
+            meta: { title: '富文本编辑器' }
           },
           {
             path: 'markdown',
             name: 'Markdown',
             component: () => import('@/views/form/thirdmenu/markdown/index'),
-            meta: { title: 'markdown编辑器', icon: 'table' }
+            meta: { title: 'markdown编辑器' }
           }
         ]
       },
@@ -83,7 +83,7 @@ const routes = [
         path: 'upload',
         name: 'Upload',
         component: () => import('@/views/form/upload/index'),
-        meta: { title: '文件上传', icon: 'tree' }
+        meta: { title: '文件上传' }
       }
     ]
   },
@@ -97,7 +97,7 @@ const routes = [
         path: 'index',
         component: () => import('@/views/icon/index'),
         name: 'Icon',
-        meta: { title: '自定义图标', icon: 'guide' }
+        meta: { title: '自定义图标', icon: 'el-icon-picture-outline-round' }
       }
     ]
   },
@@ -111,7 +111,7 @@ const routes = [
         path: 'index',
         component: () => import('@/views/basecharts/index'),
         name: 'BaseCharts',
-        meta: { title: 'schart图表', icon: 'guide' }
+        meta: { title: 'schart图表', icon: 'el-icon-pie-chart' }
       }
     ]
   },
@@ -121,19 +121,19 @@ const routes = [
     component: Layout,
     redirect: '/drag/draglist',
     name: 'Drag',
-    meta: { title: '拖拽组件', icon: 'el-icon-s-help' },
+    meta: { title: '拖拽组件', icon: 'el-icon-rank' },
     children: [
       {
         path: 'draglist',
         name: 'DragList',
         component: () => import('@/views/drag/draglist/index'),
-        meta: { title: '拖拽列表', icon: 'table' }
+        meta: { title: '拖拽列表' }
       },
       {
         path: 'dragdialog',
         name: 'DragDialog',
         component: () => import('@/views/drag/dragdialog/index'),
-        meta: { title: '拖拽弹框', icon: 'tree' }
+        meta: { title: '拖拽弹框' }
       }
     ]
   },
@@ -147,7 +147,7 @@ const routes = [
         path: 'index',
         component: () => import('@/views/i18n/index'),
         name: 'I18n',
-        meta: { title: '国际化功能', icon: 'guide' }
+        meta: { title: '国际化功能', icon: 'el-icon-open' }
       }
     ]
   },
@@ -157,18 +157,18 @@ const routes = [
     name: 'ErrorResolve',
     component: Layout,
     redirect: '/errorresolve/permission',
+    meta: { title: '错误处理', icon: 'el-icon-warning-outline' },
     children: [
       {
         path: 'permission',
         name: 'Permission',
         component: () => import('@/views/errorresolve/permission/index'),
-        meta: { title: '权限测试', icon: 'guide' }
+        meta: { title: '权限测试' }
       },
       {
         path: '404',
-        name: '404',
         component: () => import('@/views/errorresolve/404/index'),
-        meta: { title: '404', icon: 'guide' }
+        meta: { title: '404' }
       }
     ]
   },
@@ -182,7 +182,7 @@ const routes = [
         path: 'index',
         component: () => import('@/views/donate/index'),
         name: 'Donate',
-        meta: { title: '支持作者', icon: 'guide' }
+        meta: { title: '支持作者', icon: 'el-icon-wallet' }
       }
     ]
   }
