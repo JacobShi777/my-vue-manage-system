@@ -24,6 +24,7 @@
 // import variables from '@/styles/variables.scss'
 import SidebarItem from './SidebarItem.vue'
 import Logo from './Logo.vue'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'Sidebar',
@@ -32,6 +33,9 @@ export default {
     Logo
   },
   computed: {
+    ...mapGetters([
+      'isCollapse'
+    ]),
     routes () {
       return this.$router.options.routes
     }
@@ -41,20 +45,7 @@ export default {
   },
   data () {
     return {
-      // tofdo
-      showLogo: true,
-      isCollapse: false
-    }
-  },
-  created () {
-    // console.log(this.$store)
-  },
-  methods: {
-    handleOpen (key, keyPath) {
-      console.log(key, keyPath)
-    },
-    handleClose (key, keyPath) {
-      console.log(key, keyPath)
+      showLogo: true
     }
   }
 }
@@ -64,6 +55,5 @@ export default {
   .el-menu-vertical-demo:not(.el-menu--collapse) {
     width: 200px;
     min-height: 400px;
-    // background-color: #2B394C;
   }
 </style>

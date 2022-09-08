@@ -10,7 +10,10 @@
 
     <el-submenu v-else ref="subMenu" :index="resolvePath(item.path)" popper-append-to-body>
       <template slot="title">
-        <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
+        <!-- tips-ns: 这里有点问题，需要加入 :class="isCollapse?'isHidden':''" 才能在折叠的时候隐藏文字，用Item组件里面不会加，所以就自己在这里加；另外下面还有配套的 .isHidden -->
+        <!-- <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" /> -->
+        <i :class="item.meta && item.meta.icon"></i>
+        <span slot="title" :class="isCollapse?'isHidden':''">{{item.meta.title}}</span>
       </template>
       <sidebar-item
         v-for="child in item.children"
@@ -29,10 +32,16 @@
 import { isExternal } from '@/utils/validate'
 import Item from './Item'
 import AppLink from './Link'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'SidebarItem',
   components: { Item, AppLink },
+  computed: {
+    ...mapGetters([
+      'isCollapse'
+    ])
+  },
   props: {
     // route object
     item: {
@@ -100,3 +109,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.isHidden{
+  display: none;
+}
+</style>

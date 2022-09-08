@@ -4,7 +4,9 @@
             <sidebar></sidebar>
         </el-aside>
         <el-container>
-            <el-header>Header</el-header>
+            <el-header height="65px">
+              <navbar></navbar>
+            </el-header>
             <el-main>
               <router-view/>
             </el-main>
@@ -14,11 +16,13 @@
 
 <script>
 import Sidebar from './components/Sidebar'
+import Navbar from './components/Navbar.vue'
 
 export default {
   name: 'Layout',
   components: {
-    Sidebar
+    Sidebar,
+    Navbar
   }
 }
 </script>
@@ -28,9 +32,10 @@ export default {
     background-color: #202A39;
   }
 
-//   .el-aside {
-//     background-color: #2B394C;
-//   }
+  // tips-ns: 这个颜色设置成和 .el-main 一样，在菜单切换出来的时候，就不会有跳出来的一块区域了
+  .el-aside {
+    background-color: #EEEEEE;
+  }
 
   .el-main {
     background-color: #EEEEEE;
