@@ -91,7 +91,11 @@ export default {
       }
       // 跟父组件传进来的拼接
       //   return path.resolve(this.basePath, routePath)
-      return this.basePath + routePath
+      // path不会用，所以这里就自己写了一下
+      if (this.basePath.endsWith('/')) {
+        return this.basePath + routePath
+      }
+      return this.basePath + '/' + routePath
     }
   }
 }
