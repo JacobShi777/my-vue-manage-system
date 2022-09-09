@@ -5,6 +5,11 @@ import Layout from '@/layout'
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/login',
+    component: () => import('@/views/login/index'),
+    hidden: true
+  },
 
   {
     path: '/',
